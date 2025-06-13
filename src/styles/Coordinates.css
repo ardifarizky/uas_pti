@@ -1,0 +1,108 @@
+.coordinates-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #444;
+  min-width: 180px;
+  font-family: monospace;
+  font-size: 12px;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.coordinates-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.coordinates-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #555;
+  padding-bottom: 5px;
+}
+
+.coordinates-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.toggle-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #666;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.coordinates-info {
+  margin-bottom: 10px;
+}
+
+.coordinate-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 2px 0;
+}
+
+.coordinate-label {
+  color: #aaa;
+  font-weight: bold;
+  min-width: 40px;
+}
+
+.coordinate-value {
+  color: #fff;
+  font-weight: bold;
+  text-align: right;
+  flex: 1;
+}
+
+.coordinates-instructions {
+  border-top: 1px solid #555;
+  padding-top: 8px;
+  font-size: 10px;
+  color: #aaa;
+}
+
+.coordinates-instructions p {
+  margin: 2px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .coordinates-container {
+    top: 10px;
+    right: 10px;
+    min-width: 160px;
+    font-size: 11px;
+  }
+  
+  .coordinates-toggle {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .coordinate-label {
+    min-width: 35px;
+  }
+} 

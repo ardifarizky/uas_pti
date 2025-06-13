@@ -1,0 +1,294 @@
+.login-container {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+
+/* Indonesian archipelago-inspired background pattern */
+.login-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(220, 20, 60, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 10%, rgba(30, 144, 255, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(34, 139, 34, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 50%, rgba(255, 140, 0, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.login-box {
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.2) 0%, rgba(30, 144, 255, 0.15) 100%);
+  backdrop-filter: blur(15px);
+  border: 3px solid #FFD700;
+  border-radius: 25px;
+  box-shadow: 
+    0 15px 45px rgba(255, 215, 0, 0.3),
+    inset 0 2px 10px rgba(255, 255, 255, 0.1);
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Traditional Indonesian gold border effect */
+.login-box::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, #FFD700, #FF8C00, #DC143C, #B8860B, #FFD700);
+  border-radius: 25px;
+  z-index: -1;
+  animation: borderGlow 4s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* Indonesian batik-inspired pattern overlay */
+.login-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 15px,
+      rgba(255, 215, 0, 0.05) 15px,
+      rgba(255, 215, 0, 0.05) 17px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 15px,
+      rgba(255, 140, 0, 0.05) 15px,
+      rgba(255, 140, 0, 0.05) 17px
+    );
+  border-radius: 25px;
+  pointer-events: none;
+}
+
+.login-box h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(45deg, #FFD700, #FF8C00, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.game-subtitle {
+  text-align: center;
+  font-size: 1.3em;
+  color: #FF8C00;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #f5f5dc;
+  font-size: 1.1em;
+  margin-bottom: 2rem;
+  font-style: italic;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #FFD700;
+  font-size: 1.1em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #B8860B;
+  border-radius: 12px;
+  font-size: 1.1em;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  color: #f5f5dc;
+  transition: all 0.3s ease;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.form-group input::placeholder {
+  color: rgba(245, 245, 220, 0.6);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid #B8860B;
+  border-radius: 12px;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Pixelify Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.button-group button[type="submit"] {
+  background: linear-gradient(135deg, #B8860B 0%, #FF8C00 100%);
+  color: white;
+  border-color: #FFD700;
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
+}
+
+.button-group button[type="submit"]:hover:not(:disabled) {
+  background: linear-gradient(135deg, #FF8C00 0%, #B8860B 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(184, 134, 11, 0.6);
+  border-color: #FF8C00;
+}
+
+.button-group button[type="button"] {
+  background: linear-gradient(135deg, rgba(34, 139, 34, 0.8) 0%, rgba(50, 205, 50, 0.8) 100%);
+  color: white;
+  border-color: #228B22;
+  box-shadow: 0 4px 15px rgba(34, 139, 34, 0.3);
+}
+
+.button-group button[type="button"]:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(50, 205, 50, 0.9) 0%, rgba(34, 139, 34, 0.9) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(34, 139, 34, 0.5);
+  border-color: #32CD32;
+}
+
+.button-group button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.skip-section {
+  margin-top: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.skip-button {
+  background: none;
+  border: none;
+  color: #FF8C00;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 500;
+  font-family: 'Pixelify Sans', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skip-button:hover {
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  transform: translateY(-1px);
+}
+
+.error-message {
+  background: linear-gradient(135deg, rgba(220, 20, 60, 0.2) 0%, rgba(139, 0, 0, 0.2) 100%);
+  backdrop-filter: blur(5px);
+  color: #FFB6C1;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 1em;
+  border: 2px solid #DC143C;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 2rem 1.5rem;
+    max-width: 350px;
+  }
+
+  .login-box h1 {
+    font-size: 2.2em;
+  }
+
+  .game-subtitle {
+    font-size: 1.1em;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    font-size: 1.1em;
+  }
+} 

@@ -1,0 +1,296 @@
+.inventory-container {
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.15) 0%, rgba(30, 144, 255, 0.1) 100%);
+  backdrop-filter: blur(10px);
+  border: 3px solid #FFD700;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+/* Indonesian traditional pattern overlay */
+.inventory-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 15px,
+      rgba(255, 215, 0, 0.05) 15px,
+      rgba(255, 215, 0, 0.05) 17px
+    );
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.inventory-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.inventory-header h3 {
+  color: #FFD700;
+  font-size: 2em;
+  margin: 0;
+  text-shadow: 
+    3px 3px 0px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(255, 215, 0, 0.8);
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #FFD700, #FF8C00, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.toggle-btn {
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.3) 0%, rgba(255, 140, 0, 0.2) 100%);
+  border: 2px solid #FFD700;
+  color: #f5f5dc;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(5px);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.toggle-btn:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.4) 0%, rgba(255, 140, 0, 0.3) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  border-color: #FF8C00;
+}
+
+.inventory-items {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.inventory-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(184, 134, 11, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid #B8860B;
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 80px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.inventory-item:hover {
+  background: rgba(184, 134, 11, 0.2);
+  border-color: #FFD700;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.item-name {
+  color: #f5f5dc;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.use-btn {
+  background: linear-gradient(45deg, #38a169, #48bb78);
+  border: 1px solid #48bb78;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.use-btn:hover {
+  background: linear-gradient(45deg, #48bb78, #68d391);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(72, 187, 120, 0.4);
+}
+
+.no-items {
+  color: #a0aec0;
+  font-style: italic;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed #B8860B;
+  border-radius: 12px;
+  font-size: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.active-effects {
+  margin-bottom: 1.5rem;
+  border-top: 1px solid #B8860B;
+  padding-top: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.active-effects h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.4em;
+  color: #68d391;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  text-align: center;
+}
+
+.effect-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(104, 211, 145, 0.15);
+  border: 1px solid #48bb78;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.effect-name {
+  color: #68d391;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.effect-time {
+  color: #a0aec0;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.inventory-instructions {
+  border-top: 1px solid #B8860B;
+  padding-top: 1rem;
+  font-size: 12px;
+  color: #a0aec0;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.inventory-instructions p {
+  margin: 0;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: normal;
+  backdrop-filter: blur(5px);
+}
+
+.inventory-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.95), rgba(20, 20, 20, 0.95));
+  color: #68d391;
+  padding: 20px 30px;
+  border-radius: 15px;
+  border: 3px solid #48bb78;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  backdrop-filter: blur(10px);
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .inventory-container {
+    padding: 1.5rem;
+  }
+
+  .inventory-header h3 {
+    font-size: 1.6em;
+  }
+
+  .inventory-items {
+    gap: 0.8rem;
+  }
+
+  .inventory-item {
+    min-width: 70px;
+    padding: 0.8rem;
+  }
+
+  .item-name {
+    font-size: 12px;
+  }
+
+  .inventory-instructions {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inventory-container {
+    padding: 1rem;
+  }
+
+  .inventory-item {
+    min-width: 60px;
+    padding: 0.6rem;
+  }
+
+  .item-name {
+    font-size: 11px;
+  }
+} 
